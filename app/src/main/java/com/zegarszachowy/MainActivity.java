@@ -1,6 +1,7 @@
 package com.zegarszachowy;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -21,8 +22,27 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         button3 = findViewById(R.id.button3);
-        button3 = findViewById(R.id.button4);
+        button4 = findViewById(R.id.button4);
         gracz1 = new Gracz(button3, true);
         gracz2 = new Gracz(button4, false);
+
+        button3.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        gracz1.obrocAktywnosc();
+                        gracz2.obrocAktywnosc();
+                    }
+                }
+        );
+        button4.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        gracz1.obrocAktywnosc();
+                        gracz2.obrocAktywnosc();
+                    }
+                }
+        );
     }
 }

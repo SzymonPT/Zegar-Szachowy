@@ -13,15 +13,22 @@ public class Gracz {
         this.button = button;
         this.czyAktywny = czyAktywny;
         ileSekund = 180;
+        if(czyAktywny){
+            uruchomZegar();
+        }
     }
 
-    private void zatrzymajZegar(){
+    public void obrocAktywnosc(){
         czyAktywny = !czyAktywny;
         if(czyAktywny){
             uruchomZegar();
         }else{
-
+            zatrzymajZegar();
         }
+    }
+
+    private void zatrzymajZegar(){
+        countDownTimer.cancel();
     }
 
     private void uruchomZegar(){
